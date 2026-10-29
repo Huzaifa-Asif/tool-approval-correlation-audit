@@ -1,0 +1,56 @@
+{
+  "name": "tool-approval-correlation-audit",
+  "version": "1.0.0",
+  "description": "Bounded offline diagnostics for tool approval request, decision and execution observation correlation.",
+  "type": "module",
+  "main": "./src/index.cjs",
+  "module": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./src/index.d.ts",
+        "default": "./src/index.js"
+      },
+      "require": {
+        "types": "./src/index.d.cts",
+        "default": "./src/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "src",
+    "examples",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "SECURITY.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test --experimental-test-coverage test/*.test.js",
+    "lint": "node --check src/index.cjs && node --check src/index.js && node --check test/audit.test.js",
+    "build": "node scripts/check-package.js",
+    "example": "node examples/audit.js",
+    "check": "npm run lint && npm test && npm run build && npm run example"
+  },
+  "license": "MIT",
+  "author": "Huzaifa Asif",
+  "keywords": [
+    "tool-calling",
+    "approval",
+    "trace",
+    "diagnostics",
+    "testing"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Huzaifa-Asif/tool-approval-correlation-audit.git"
+  },
+  "homepage": "https://github.com/Huzaifa-Asif/tool-approval-correlation-audit#readme",
+  "bugs": {
+    "url": "https://github.com/Huzaifa-Asif/tool-approval-correlation-audit/issues"
+  }
+}
